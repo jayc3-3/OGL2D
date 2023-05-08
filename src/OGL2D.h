@@ -102,10 +102,10 @@ void OGL2D_Init(void);
 void OGL2D_SetWindowHint(int windowHint);
 void OGL2D_SetWindowColor(OGL2D_Color color);
 void OGL2D_CreateWindow(int windowWidth, int windowHeight, const char* windowTitle);
-void OGL2D_CloseWindow(void);
 void OGL2D_DestroyWindow(void);
 
 int OGL2D_WindowShouldClose(void);
+void OGL2D_CloseWindow(void);
 
 int OGL2D_GetFPS(void);
 float OGL2D_GetFrameTime(void);
