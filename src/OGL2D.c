@@ -1,14 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
 #define STB_IMAGE_IMPLEMENTATION
-#define GLT_IMPLEMENTATION
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <cglm/cglm.h>
-#include "glText.h"
 #include "stb_image.h"
 
 #include "OGL2D.h"
@@ -27,7 +24,7 @@ unsigned int shaderProgram;
 
 int textureAmount = 0;
 
-bool OGL2D_DebugMode = false;
+int OGL2D_DebugMode = 0;
 
 int frameCounter = 0;
 double currentTime = 0;
@@ -39,7 +36,7 @@ float deltaTime = 0;
 double dtCurrent = 0;
 double dtLast = 0;
 
-bool useVsync = false;
+int useVsync = 0;
 
 const unsigned int rectangleIndices[] = {
 	0, 1, 3,
@@ -376,7 +373,7 @@ void OGL2D_LoadShader(const char* vertexPath, const char* fragmentPath){
 	return;
 }
 
-OGL2D_Texture OGL2D_LoadTexture(const char* filePath, bool transparent){
+OGL2D_Texture OGL2D_LoadTexture(const char* filePath, int transparent){
 	if(OGL2D_DebugMode)
 		printf("OGL2D_INFO: Attempting to load texture ID '%i' from '%s'\n", textureAmount, filePath);
 
@@ -475,8 +472,8 @@ void OGL2D_DrawTexture(OGL2D_Texture texture, float x, float y, float width, flo
 	return;
 }
 
-bool OGL2D_IsKeyPressed(int key){
-	bool isPressed = glfwGetKey(OGL2D_Window, key);
+int OGL2D_IsKeyPressed(int key){
+	int isPressed = glfwGetKey(OGL2D_Window, key);
 
 	return isPressed;
 }
