@@ -105,6 +105,7 @@ void OGL2D_CreateWindow(int windowWidth, int windowHeight, const char* windowTit
 void OGL2D_DestroyWindow(void);
 
 int OGL2D_WindowShouldClose(void);
+void OGL2D_CloseWindow(void);
 
 int OGL2D_GetFPS(void);
 float OGL2D_GetFrameTime(void);
