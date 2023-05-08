@@ -105,7 +105,7 @@ void OGL2D_Init(void){
 	}
 	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
-	printf("OGL2D - A 2D framework for making games\nhttps://github.com/jayc3-3/OGL2D\n");
+	printf("OGL2D 1.0.0 - A 2D framework for making games\nhttps://github.com/jayc3-3/OGL2D\n");
 
 	return;
 }
