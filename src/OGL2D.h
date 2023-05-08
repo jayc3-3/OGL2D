@@ -69,6 +69,8 @@ typedef enum {
 	OGL2D_KEY_RSHIFT = 344,
 	OGL2D_KEY_LCTRL = 341,
 	OGL2D_KEY_RCTRL = 345,
+	OGL2D_KEY_LALT = 342,
+	OGL2D_KEY_RALT = 346,
 
 	OGL2D_KEY_RIGHT = 262,
 	OGL2D_KEY_LEFT = 263,
@@ -89,7 +91,7 @@ typedef enum {
 	OGL2D_KEY_F12 = 301
 } OGL2D_Keys;
 
-extern bool OGL2D_DebugMode;
+extern int OGL2D_DebugMode;
 
 #define OGL2D_WHITE (OGL2D_Color){255, 255, 255}
 #define OGL2D_BLACK (OGL2D_Color){0, 0, 0}
@@ -109,10 +111,10 @@ float OGL2D_GetFrameTime(void);
 
 void OGL2D_LoadShader(const char* vertexPath, const char* fragmentPath);
 
-OGL2D_Texture OGL2D_LoadTexture(const char* filePath, bool transparent);
+OGL2D_Texture OGL2D_LoadTexture(const char* filePath, int transparent);
 void OGL2D_DestroyTexture(OGL2D_Texture* texture);
 
-bool OGL2D_IsKeyPressed(int key);
+int OGL2D_IsKeyPressed(int key);
 
 void OGL2D_StartRendering(void);
 void OGL2D_StopRendering(void);
