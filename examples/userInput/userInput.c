@@ -17,10 +17,13 @@ int main(void){
 
 	float deltaTime;
 
-	printf("WASD or arrow keys to move wall\n");
+	printf("WASD or arrow keys to move wall, press 'Q' to exit\n");
 
 	while(!OGL2D_WindowShouldClose()){
 		deltaTime = OGL2D_GetFrameTime();
+
+		if(OGL2D_IsKeyPressed(OGL2D_KEY_Q)) // Close window if 'Q' is pressed
+			OGL2D_CloseWindow();
 
 		// Calculate wall position based on recieved input
 		if(OGL2D_IsKeyPressed(OGL2D_KEY_W) || OGL2D_IsKeyPressed(OGL2D_KEY_UP))
