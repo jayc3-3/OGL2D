@@ -1,0 +1,9 @@
+How to compile with OGL2D:
+
+gcc myGame.c -o myGame -L/path/to/libOGL2D.a -lOGL2D -lGL -lGLEW -lglfw -lm
+./myGame
+
+How to compile OGL2D from source:
+
+gcc -c OGL2D.c
+ar rcs libOGL2D.a OGL2D.o
